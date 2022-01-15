@@ -1,0 +1,19 @@
+include:
+  - project: 'metastake/skeleton-pipeline'
+    ref: v1.0.1
+    file: '/substrate-base.yml'
+
+variables:
+  GIT_REPOSITORY: https://github.com/paritytech/polkadot
+  TAG: v0.9.15
+  PROG_NAME: polkadot
+
+app-build:
+  image: metastake/metabox:v0.1.1
+  before_script:
+    - echo
+  script:
+    - wget ${GIT_REPOSITORY}/releases/download/${TAG}/${PROG_NAME}
+    - chmod +x ${PROG_NAME}
+  after_script:
+    - echo
