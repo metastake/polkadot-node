@@ -8,8 +8,8 @@ Released tags can be found [here](https://hub.docker.com/r/metastake/polkadot-no
 
 [![License](https://img.shields.io/github/license/metastake/polkadot-node)](/LICENSE)
 [![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline-status/metastake/polkadot-node?branch=main)](https://gitlab.com/metastake/polkadot-node/-/pipelines)
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/metastake/polkadot-node?sort=semver)](/Dockerfile)
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/metastake/polkadot-node?sort=semver)](/Dockerfile)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/metastake/polkadot-node?sort=date)](https://hub.docker.com/r/metastake/polkadot-node)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/metastake/polkadot-node?arch=amd64&sort=date)](https://hub.docker.com/r/metastake/polkadot-node)
 [![Docker](https://img.shields.io/docker/pulls/metastake/polkadot-node)](https://hub.docker.com/r/metastake/polkadot-node)
 
 # Get Started
