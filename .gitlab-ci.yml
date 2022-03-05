@@ -16,4 +16,4 @@ app-build:
     - wget ${GIT_REPOSITORY}/releases/download/${TAG}/${PROG_NAME}
     - chmod +x ${PROG_NAME}
   after_script:
-    - echo
+    - echo ${PROG_NAME} ${TAG}
