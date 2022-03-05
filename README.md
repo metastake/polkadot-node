@@ -12,42 +12,19 @@ Released tags can be found [here](https://hub.docker.com/r/metastake/polkadot-no
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/metastake/polkadot-node?arch=amd64&sort=date)](https://hub.docker.com/r/metastake/polkadot-node)
 [![Docker](https://img.shields.io/docker/pulls/metastake/polkadot-node)](https://hub.docker.com/r/metastake/polkadot-node)
 
-# Get Started
+# Flags and Options as Environment variables
 
-Create a directory to store chain database
-```
-$ mkdir database
-```
-
-Remember to specify the `version tag`, eg: `v0.9.15` and append `--chain kusama` if you want to run *Kusama* node.
-
-Now run the docker container, to sync the database
-```
-$ docker run --rm \
-              -v $(pwd)/database:/data \
-              metastake/polkadot-node:v0.9.15 \
-              --chain kusama -d /data
-```
-
-when data is synced, stop (Ctrl-C) the container and run another one to get sessionKeys
-```
-$ docker run --rm \
-              -p 9933:99933 \
-              -v $(pwd)/database:/data \
-              metastake/polkadot-node:v0.9.15 \
-              --chain kusama -d /data --unsafe-rpc-external --rpc-methods=Unsafe --validator
-```
-
-on host machine, run
-```
-$ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://127.0.0.1:9933
-```
-
-Now, the validator up and running
-```
-$ docker run --name hydra-validator -d \
-              -v $(pwd)/database:/data \
-              --restart always -d \
-              metastake/polkadot-node:v0.9.15 \
-              --chain kusama -d /data --validator
-```
+| Flags / Options          | Environment Variable            |
+|--------------------------|---------------------------------|
+| --validator              | VALIDATOR_ENABLED               |
+| --discover-local         | VALIDATOR_DISCOVER_LOCAL        |
+| --unsafe-rpc-external    | VALIDATOR_UNSAFE_RPC_EXTERNAL   |
+| --prometheus-external    | VALIDATOR_PROMETHEUS_EXTERNAL   |
+| --base-path              | VALIDATOR_BASE_PATH             |
+| --chain                  | VALIDATOR_CHAIN                 |
+| --name                   | VALIDATOR_NAME                  |
+| --in-peers               | VALIDATOR_IN_PEERS              |
+| --out-peers              | VALIDATOR_OUT_PEERS             |
+| --max-parallel-downloads | VALIDATOR_MAX_PARALLEL_DOWNLOAD |
+| --public-addr            | VALIDATOR_PUBLIC_ADDR           |
+| --bootnodes              | VALIDATOR_BOOT_NODES            |
