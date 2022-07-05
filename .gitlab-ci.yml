@@ -5,7 +5,7 @@ include:
 
 variables:
   GIT_REPOSITORY: https://github.com/paritytech/polkadot
-  TAG: v0.9.24
+  TAG: v0.9.25
   PROG_NAME: polkadot
 
 app-build:
